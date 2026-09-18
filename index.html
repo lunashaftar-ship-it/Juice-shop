@@ -10,28 +10,32 @@
 <body class="bg-white text-gray-800">
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-between py-12 px-6 sm:px-12 lg:px-24 bg-white">
+    <!-- Hero Section بخلفية صورة كاملة -->
+    <section class="relative min-h-screen flex flex-col justify-between py-12 px-6 sm:px-12 lg:px-24 bg-cover bg-center bg-no-repeat" style="background-image: url('https://raw.githubusercontent.com/lunashaftar-ship-it/Juice-shop/main/IMG_0103.jpeg');">
+        
+        <!-- طبقة شفافة خفيفة (Overlay)اختيارية لضمان وضوح النصوص فوق الصورة -->
+        <div class="absolute inset-0 bg-white/40 -z-0"></div>
 
-        <!-- المحتوى الرئيسي للواجهة (يسار ويمين) -->
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
-
-            <!-- القسم الأيسر: الاسم، العنوان، الوصف، وزر التسوق -->
-            <div class="lg:col-span-7 space-y-6 text-left z-10">
+        <!-- المحتوى الرئيسي للواجهة -->
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto z-10">
+            
+            <!-- القسم الأيسر/الوسط: الاسم، العنوان، الوصف، وزر التسوق -->
+            <div class="lg:col-span-8 space-y-6 text-left">
                 <!-- اسم البراند / القسم -->
-                <span class="text-sm font-semibold tracking-widest text-green-700 uppercase">
+                <span class="text-sm font-semibold tracking-widest text-green-800 uppercase bg-white/80 px-3 py-1 rounded-md inline-block">
                     Tellus Succhi Naturali
                 </span>
-
+                
                 <!-- العنوان الرئيسي -->
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight drop-shadow-sm">
                     Il sapore autentico della natura in ogni sorso.
                 </h1>
-
+                
                 <!-- الفقرة أو الوصف -->
-                <p class="text-lg text-gray-600 max-w-xl">
+                <p class="text-lg text-gray-800 max-w-xl font-medium drop-shadow-sm">
                     Scopri la nostra selezione esclusiva di succhi freschi e naturali, spremuti a freddo per offrirti il massimo del benessere e della qualità direttamente dalla terra.
                 </p>
-
+                
                 <!-- زر التسوق -->
                 <div class="pt-4">
                     <a href="#shop" class="inline-block bg-green-700 hover:bg-green-800 text-white font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-0.5">
@@ -40,14 +44,22 @@
                 </div>
             </div>
 
-            <!-- القسم الأيمن: صورة العصير والخلفية الخاصة به -->
-            <div class="lg:col-span-5 flex justify-center items-center relative">
-                <div class="w-full h-auto flex items-center justify-center">
-                    <!-- استبدل رابط الصورة هنا برابط صورتك المطلوبة -->
-                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85" alt="Bottiglia di succo naturale Tellus" class="w-full max-w-md lg:max-w-lg object-contain drop-shadow-sm">
+            <!-- الجانب الأيمن يصبح فارغاً ليترك الصورة تظهر بوضوح -->
+            <div class="lg:col-span-4"></div>
+
+        </div>
+
+        <!-- القسم الأسفل: مكان الشعار (Logo) -->
+        <div class="max-w-7xl mx-auto w-full pt-8 border-t border-gray-200/50 flex justify-center lg:justify-start items-center z-10">
+            <div class="flex items-center space-x-3">
+                <!-- مكان الشعار -->
+                <div class="h-10 w-32 bg-white/80 backdrop-blur-sm border border-gray-200 rounded flex items-center justify-center text-xs text-gray-700 font-medium">
+                
                 </div>
             </div>
+        </div>
 
+    </section>
         </div>
 
         <!-- القسم الأسفل: مكان الشعار (Logo) -->
@@ -61,6 +73,7 @@
         </div>
 
     </section>
+
     <!-- القسم الجديد (تحت الهيرو) -->
     <section class="py-20 px-6 sm:px-12 lg:px-24 bg-amber-50/30 border-t border-gray-100">
         <div class="max-w-7xl mx-auto w-full space-y-12">
@@ -101,8 +114,7 @@
         </div>
     </section>
 
-   <!-- القسم الجديد (تحت الهيرو) -->
-        <!-- القسم الثالث: قائمة تمرير جانبية تعرض منتجاً واحداً -->
+    <!-- القسم الثالث: قائمة تمرير جانبية تعرض منتجاً واحداً -->
     <section id="shop" class="py-20 px-6 sm:px-12 lg:px-24 bg-white border-t border-gray-100 overflow-hidden">
         <div class="max-w-4xl mx-auto w-full space-y-12">
 
@@ -203,73 +215,76 @@
         });
         dots.forEach((dot) => dot.addEventListener('click', () => showProduct(Number(dot.dataset.slide))));
     </script>
-    <section class="tellus-cta">
-  <div class="tellus-cta-inner">
-    <img src="images/tellus-cup.jpg" alt="Tellus" class="tellus-cta-img">
-    <div class="tellus-cta-text">
-      <h2>اكتشف العصير المناسب لك</h2>
-      <p>جاوب على استفتاء صحي قصير ونرد عليك بالعصير Tellus الأنسب لجسمك.</p>
-      <a href="questionario.html" class="tellus-cta-btn">ابدأ الاختبار</a>
-    </div>
-  </div>
-</section>
 
-<style>
-  .tellus-cta {
-    background: #faf7f0;
-    padding: 40px 20px;
-  }
-  .tellus-cta-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  .tellus-cta-img {
-    width: 260px;
-    max-width: 100%;
-    border-radius: 16px;
-    flex-shrink: 0;
-  }
-  .tellus-cta-text {
-    flex: 1;
-    min-width: 220px;
-    font-family: Arial, sans-serif;
-  }
-  .tellus-cta-text h2 {
-    color: #163b2c;
-    margin: 0 0 10px;
-    font-family: Georgia, serif;
-  }
-  .tellus-cta-text p {
-    color: #163b2c;
-    margin: 0 0 18px;
-    line-height: 1.5;
-  }
-  .tellus-cta-btn {
-    display: inline-block;
-    background: #163b2c;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: background 0.2s;
-  }
-  .tellus-cta-btn:hover {
-    background: #6d8c3f;
-  }
-  @media (max-width: 500px) {
-    .tellus-cta-inner { flex-direction: column; text-align: center; }
-  }
-</style>
+    <!-- قسم اختبار العصير المناسب -->
+    <section class="tellus-cta">
+      <div class="tellus-cta-inner">
+        <img src="images/tellus-cup.jpg" alt="Tellus" class="tellus-cta-img">
+        <div class="tellus-cta-text">
+          <h2>اكتشف العصير المناسب لك</h2>
+          <p>جاوب على استفتاء صحي قصير ونرد عليك بالعصير Tellus الأنسب لجسمك.</p>
+          <a href="questionario.html" class="tellus-cta-btn">ابدأ الاختبار</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .tellus-cta {
+        background: #faf7f0;
+        padding: 40px 20px;
+      }
+      .tellus-cta-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .tellus-cta-img {
+        width: 260px;
+        max-width: 100%;
+        border-radius: 16px;
+        flex-shrink: 0;
+      }
+      .tellus-cta-text {
+        flex: 1;
+        min-width: 220px;
+        font-family: Arial, sans-serif;
+      }
+      .tellus-cta-text h2 {
+        color: #163b2c;
+        margin: 0 0 10px;
+        font-family: Georgia, serif;
+      }
+      .tellus-cta-text p {
+        color: #163b2c;
+        margin: 0 0 18px;
+        line-height: 1.5;
+      }
+      .tellus-cta-btn {
+        display: inline-block;
+        background: #163b2c;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+      .tellus-cta-btn:hover {
+        background: #6d8c3f;
+      }
+      @media (max-width: 500px) {
+        .tellus-cta-inner { flex-direction: column; text-align: center; }
+      }
+    </style>
+
     <!-- Footer النهائي -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
 
-            <!-- شبكة الفوتر (أربعة أعمدة أو حسب التنسيق) -->
+            <!-- شبكة الفوتر -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-gray-800">
 
                 <!-- العمود الأول: شعار البراند ونبذة مختصرة -->
@@ -317,7 +332,6 @@
                     <h4 class="text-white font-semibold text-base tracking-wider uppercase">Seguici</h4>
                     <p class="text-sm text-gray-400">Rimani aggiornato sulle nostre novità e offerte speciali.</p>
                     <div class="flex space-x-4 pt-2">
-                        <!-- أيقونة منصة (مثال) -->
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-green-700 flex items-center justify-center text-white transition">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
                         </a>
@@ -340,7 +354,6 @@
 
         </div>
     </footer>
-
 
 </body>
 </html>
